@@ -22,15 +22,17 @@ BoxLayout:
 
 <Form@BoxLayout>:
     qt_words: _qt_words_input
+    orientation: "vertical"
 
     Label:
-        text: "Quantas palavras?"
-    TextInput:
-        id: _qt_words_input
-    Button:
-        id: _ok_button
-        text: "Skate!"
-        on_press: app.generate(root.qt_words.text)
+        text: "Eu não sei fazer poesia"
+    BoxLayout:
+        TextInput:
+            id: _qt_words_input
+        Button:
+            id: _ok_button
+            text: "Skate!"
+            on_press: app.generate(root.qt_words.text)
 
 
 <Body@ScrollView>:
