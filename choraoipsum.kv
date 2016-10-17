@@ -1,5 +1,7 @@
 BoxLayout:
     orientation: 'vertical'
+    form: _form
+    body: _body
 
     ActionBar:
         ActionView:
@@ -10,20 +12,25 @@ BoxLayout:
         orientation: 'vertical'
 
         Form:
+            id: _form
             size_hint_y: 1
-        IpsumText:
+        Body:
+            id: _body
             size_hint_y: 4
 
 
 <Form@BoxLayout>:
+    qt_words: _qt_words_input
+
     Label:
         text: "Quantas palavras?"
     TextInput:
         id: _qt_words_input
     Button:
         id: _ok_button
+        text: "Skate!"
+        on_press: app.generate(root.qt_words.text)
 
 
-<IpsumText@Label>:
-    Label:
-        text: ""
+<Body@Label>:
+    text: ""
