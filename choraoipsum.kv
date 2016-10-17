@@ -1,23 +1,59 @@
-BoxLayout:
-    orientation: 'vertical'
-    form: _form
-    body: _body
+#: import NavigationDrawer kivy.garden.navigationdrawer.NavigationDrawer
 
-    ActionBar:
-        ActionView:
-            ActionPrevious:
-                title: 'Chorao Ipsum'
+
+NavigationDrawer:
+    side_panel: _side_panel
+    main_panel: _main_panel
+    menu_image: _menu_image
 
     BoxLayout:
-        orientation: 'vertical'
+        id: _side_panel
+        orientation: "vertical"
 
-        Form:
-            id: _form
+        Label:
+            text: "Menu"
             size_hint_y: 1
-        Body:
-            id: _body
-            size_hint_y: 4
-            width: root.width
+        BoxLayout:
+            size_hint_y: 2
+            orientation: "vertical"
+
+            Button:
+                text: "TCHAROLADRÃO!!"
+                on_press: root.menu_image.source = "chorao3.jpg"
+            Button:
+                text: "putzpuputz-CHARLIE!"
+                on_press: root.menu_image.source = "chorao.jpg"
+            Button:
+                text: "pupuputzpz-BROWN!"
+                on_press: root.menu_image.source = "chorao2.jpg"
+
+        Image:
+            id: _menu_image
+            source: "chorao2.jpg"
+            size_hint_y: 7
+
+    BoxLayout:
+        id: _main_panel
+        orientation: 'vertical'
+        form: _form
+        body: _body
+    
+        ActionBar:
+            ActionView:
+                ActionPrevious:
+                    title: 'Chorao Ipsum'
+                    on_press: root.toggle_state()
+    
+        BoxLayout:
+            orientation: 'vertical'
+    
+            Form:
+                id: _form
+                size_hint_y: 1
+            Body:
+                id: _body
+                size_hint_y: 4
+                width: root.width
 
 
 <Form@BoxLayout>:
@@ -45,3 +81,4 @@ BoxLayout:
         size_hint_y: None
         height: self.texture_size[1]
         text_size: self.width, None
+
