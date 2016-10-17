@@ -14,14 +14,20 @@ class ChoraoIpsum(App):
 
     def generate(self, qt_words):
         words = WORDS.copy()
-        sentence = ""
+        sentence = "Chorao Ipsum vagabundo brown"
         for i in range(int(qt_words)):
             if not words:
                 words = WORDS.copy()
             shuffle(words)
-            sentence = "{} {}".format(sentence, words.pop())
+            if i % 7 == 0:
+                sentence = "{}{}".format(sentence, ",")
+                sentence = "{} {}".format(sentence, words.pop())
+            elif i % 11 == 0:
+                sentence = "{}{}".format(sentence, ".")
+                sentence = "{} {}".format(sentence, words.pop().capitalize())
+            else:
+                sentence = "{} {}".format(sentence, words.pop())
 
-        print(sentence)
         self.root.body.ipsumarea.text = sentence
 
 if __name__ == "__main__":
