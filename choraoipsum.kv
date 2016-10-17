@@ -1,0 +1,29 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    ActionBar:
+        ActionView:
+            ActionPrevious:
+                title: 'Chorao Ipsum'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Form:
+            size_hint_y: 1
+        IpsumText:
+            size_hint_y: 4
+
+
+<Form@BoxLayout>:
+    Label:
+        text: "Quantas palavras?"
+    TextInput:
+        id: _qt_words_input
+    Button:
+        id: _ok_button
+
+
+<IpsumText@Label>:
+    Label:
+        text: ""
