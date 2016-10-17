@@ -17,6 +17,7 @@ BoxLayout:
         Body:
             id: _body
             size_hint_y: 4
+            width: root.width
 
 
 <Form@BoxLayout>:
@@ -32,5 +33,12 @@ BoxLayout:
         on_press: app.generate(root.qt_words.text)
 
 
-<Body@Label>:
-    text: ""
+<Body@ScrollView>:
+    ipsumarea: _ipsumarea
+
+    Label:
+        id: _ipsumarea
+        text: ""
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None

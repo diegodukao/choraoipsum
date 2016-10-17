@@ -22,6 +22,7 @@ class ChoraoIpsum(App):
             sentence = "{} {}".format(sentence, words.pop())
 
         print(sentence)
+        self.root.body.ipsumarea.text = sentence
 
 if __name__ == "__main__":
     ChoraoIpsum().run()
